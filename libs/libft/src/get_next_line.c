@@ -6,7 +6,7 @@
 /*   By: acoudray <acoudray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 18:14:12 by acoudray          #+#    #+#             */
-/*   Updated: 2018/03/10 13:13:43 by tlecas           ###   ########.fr       */
+/*   Updated: 2020/02/21 17:08:57 by acoudray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static	char		*ft_read_fd(int fd, char *tab, int *i)
 		tab = ft_strncpy(tab, buff, *i);
 		tab[*i] = '\0';
 		free(buff);
-		if ((*i % BUFF_5IZE(BUFF_SIZE)) != 0)
+		if ((*i % (BUFF_SIZE > 0 ? BUFF_SIZE : 1)) != 0)
 			break ;
 	}
 	return (tab);
@@ -93,17 +93,13 @@ static	t_gnl		*ft_struct(t_gnl **beginlist, int fd, int *i)
 	char			*str;
 
 	str = NULL;
-	READCHECK((str = ft_read_fd(fd, str, &*i)), (*i));
+	if (!(str = ft_read_fd(fd, str, &*i)) && (*i) < 0)
+		return (0);
 	ptr = *beginlist;
-	while (ptr)
-	{
-		if ((ptr->fd) == fd)
-			return (ptr);
-		else
-			ptr = ptr->next;
-	}
-	READCHECK((str), -1);
-	ptr = NULL;
+	if ((ptr = ft_list_par(ptr, fd)) != 0)
+		return (ptr);
+	if (!(str))
+		return (0);
 	*i = ft_strlen(str);
 	if (!(ptr = (t_gnl *)malloc(sizeof(t_gnl))) ||
 	(!((ptr->str = (char*)malloc(sizeof(char) * (*i + 1))))))

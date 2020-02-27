@@ -21,7 +21,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	-@ar -r $@ $^ 2> /dev/null || true
 	@ranlib $@
-	@echo "mat4lib compilée."
+	@echo "gl_lib compilée."
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_glarray.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmachena <gmachena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acoudray <acoudray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 12:09:54 by gmachena          #+#    #+#             */
-/*   Updated: 2020/02/27 14:22:32 by gmachena         ###   ########.fr       */
+/*   Updated: 2020/02/27 15:52:23 by acoudray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void		ft_get_vao(t_env *e)
 {
-    float vtx[] = {
-        -0.5f, -0.5f, 0.0f,
-         0.5f, -0.5f, 0.0f,
-         0.0f,  0.5f, 0.0f
-    };
+	float vtx[] = {
+		-0.5f, -0.5f, 0.0f,
+			0.5f, -0.5f, 0.0f,
+			0.0f,  0.5f, 0.0f
+	};
 
 	glGenVertexArrays(1, &e->vao);
 	glGenBuffers(1, &e->vbo);
@@ -27,6 +27,6 @@ void		ft_get_vao(t_env *e)
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vtx), vtx, GL_STATIC_DRAW);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
-	glBindBuffer(GL_ARRAY_BUFFER, 0); 
-    glBindVertexArray(0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindVertexArray(0);
 }

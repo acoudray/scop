@@ -3,24 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmachena <gmachena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acoudray <acoudray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 16:32:51 by gmachena          #+#    #+#             */
-/*   Updated: 2020/02/24 12:14:15 by gmachena         ###   ########.fr       */
+/*   Created: 2016/11/07 16:32:51 by acoudray          #+#    #+#             */
+/*   Updated: 2020/02/21 17:08:57 by acoudray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # define BUFF_SIZE 100000
-# define BUFF_5IZE(x) (x > 0 ? x : 1)
-# define READCHECK(x, y) if (!x && y < 0) return (0);
-# define ABS(x) x < 0 ? x * - 1.0 : x
-# define UCHARP unsigned char
-# define LDOUBLE long double
 # include <sys/stat.h>
 # include <sys/types.h>
-# include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
 # include <dirent.h>
@@ -32,6 +26,8 @@
 # include <inttypes.h>
 # include <stdio.h>
 # include <stdarg.h>
+# include "ft_malloc.h"
+# include "ft_printf.h"
 
 typedef struct	s_gnl
 {
@@ -99,7 +95,6 @@ int				ft_strequ(char const *s1, char const *s2);
 char			**ft_strsplit(char const *s, char c);
 int				ft_iswp(int c);
 char			*ft_strtrim(char const *s);
-void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
 void			ft_strdel(char **as);
 char			*ft_strjoin(char const *s1, char const *s2);
@@ -180,9 +175,12 @@ char			*ft_get_flstring(char ***res);
 void			ft_str_mul_two(char **str, unsigned int n);
 char			*ft_deci_bin(char *bin);
 char			*ft_strrev(char *str);
-char			*ft_strappend(char **dest, const char *src);
-
 
 int				get_next_line(const int fd, char **line);
+t_gnl			*ft_list_par(t_gnl *ptr, int fd);
+
+extern	void	*ft_malloc(size_t size);
+extern	void	free(void *ptr);
+extern	void	*realloc(void *ptr, size_t size);
 
 #endif

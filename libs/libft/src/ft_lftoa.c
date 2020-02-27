@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acoudray <acoudray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 12:14:36 by gmachena          #+#    #+#             */
-/*   Updated: 2019/11/01 16:02:19 by acoudray         ###   ########.fr       */
+/*   Created: 2019/10/22 12:14:36 by acoudray          #+#    #+#             */
+/*   Updated: 2020/02/21 17:08:57 by acoudray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void		ft_nb(unsigned char tab, int len, unsigned char **res, int k)
 	}
 }
 
-static void		ft_print(unsigned char tab[], unsigned char **res)
+static void		print(unsigned char tab[], unsigned char **res)
 {
 	int		k;
 	int		i;
@@ -77,14 +77,14 @@ char			*ft_lftoa(long double nbr)
 
 	if (nbr != nbr)
 		return ((nbr < 0) ? ("-nan") : ("nan"));
-	if (!(longdb_tab = (UCHARP *)malloc(sizeof(UCHARP) * sizeof(LDOUBLE) + 1)))
-		return (0);
-	if (!(res = (unsigned char *)malloc(sizeof(unsigned char) * 128 + 1)))
+	if (!(longdb_tab = (unsigned char *)malloc(sizeof(unsigned char) *
+	sizeof(long double) + 1)) || !(res =
+	(unsigned char *)malloc(sizeof(unsigned char) * 128 + 1)))
 		return (0);
 	ft_memset(longdb_tab, '\0', sizeof(long double) + 1);
 	ft_memset(res, '\0', sizeof(unsigned char) * 128 + 1);
 	ft_memcpy(longdb_tab, &nbr, sizeof(long double));
-	ft_print(longdb_tab, &res);
+	print(longdb_tab, &res);
 	neg = (res[0] == '1') ? 1 : 0;
 	if (ft_get_iee(&res, nbr) == -1)
 	{

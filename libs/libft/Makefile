@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gmachena <gmachena@student.42.fr>          +#+  +:+       +#+         #
+#    By: acoudray <acoudray@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/11/08 14:37:39 by gmachena          #+#    #+#              #
-#    Updated: 2019/10/31 12:53:31 by gmachena         ###   ########.fr        #
+#    Created: 2016/11/08 14:37:39 by acoudray          #+#    #+#              #
+#    Updated: 2020/02/25 16:15:48 by acoudray         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 SRC_PATH = ./src/
-SRC_NAME = ft_atoi.c \
+
+SRC_NAME =			 ft_atoi.c \
 					 ft_uimin.c \
 					 ft_rgb_add.c \
 					 fclamp.c \
@@ -27,7 +28,6 @@ SRC_NAME = ft_atoi.c \
 					 ft_islower.c \
 					 ft_iswp.c \
 					 ft_isprint.c\
-					 ft_memalloc.c \
 					 ft_itoa.c \
 					 ft_isupper.c \
 					 ft_memccpy.c \
@@ -110,7 +110,30 @@ SRC_NAME = ft_atoi.c \
 					 ft_lftoa.c \
 					 ft_str_mul_two.c \
 					 ft_deci_bin.c \
-					 ft_strrev.c
+					 ft_strrev.c \
+					 free.c \
+					 malloc.c \
+					 realloc.c \
+					 show_alloc_mem.c \
+					 tools_glob.c \
+					 ctrl_format.c \
+					 dispatcher.c \
+					 fl_dir.c \
+					 fl_length.c \
+					 fl_preci_number.c \
+					 flags_detector.c \
+					 ft_colors.c \
+					 ft_dispatchc.c \
+					 ft_dispatchd.c \
+					 ft_dispatchf.c \
+					 ft_itoa_printf.c \
+					 ft_print.c \
+					 tools_f.c \
+					 tools.c \
+					 tools_malloc.c \
+					 printf_main.c \
+					ft_list_par.c	\
+
 SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
 OBJ_PATH = ./obj/
 OBJ_NAME = $(SRC_NAME:.c=.o)

@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   free_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acoudray <acoudray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 23:44:31 by gmachena          #+#    #+#             */
-/*   Updated: 2017/11/30 11:26:05 by acoudray         ###   ########.fr       */
+/*   Created: 2020/02/19 13:03:05 by acoudray          #+#    #+#             */
+/*   Updated: 2020/02/21 15:16:57 by acoudray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_malloc.h"
 
-void	*ft_memalloc(size_t size)
+void	ft_free_all(void)
 {
-	void *tab;
-
-	if (!(tab = malloc(sizeof(void*) * (size))))
-		exit(EXIT_FAILURE);
-	ft_memset(tab, 0, size);
-	return (tab);
+	while (g_glob)
+	{
+		free(g_glob);
+		g_glob = g_glob->next;
+	}
 }

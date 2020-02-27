@@ -3,22 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strappend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmachena <gmachena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acoudray <acoudray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 13:23:28 by gmachena          #+#    #+#             */
-/*   Updated: 2020/02/25 10:27:45 by gmachena         ###   ########.fr       */
+/*   Created: 2019/10/09 13:23:28 by acoudray          #+#    #+#             */
+/*   Updated: 2020/02/21 17:08:57 by acoudray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strappend(char **dest, const char *src)
+char	*ft_strappend(char **dest, char const *src)
 {
 	char	*tmp;
 
 	tmp = ft_strjoin(*dest, src);
-	if (*dest == NULL)
-		ft_strdel(dest);
+	ft_strdel(dest);
 	*dest = tmp;
 	return (*dest);
 }
