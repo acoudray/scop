@@ -1,1 +1,1 @@
-scop_git
+scop 42
