@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "gl_lib.h": "c",
+        "glew.h": "c",
+        "stb_image.h": "c",
+        "mat4lib.h": "c"
+    }
+}
