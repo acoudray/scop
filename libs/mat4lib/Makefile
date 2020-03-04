@@ -6,7 +6,7 @@
 #    By: gmachena <gmachena@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/17 18:15:29 by gmachena          #+#    #+#              #
-#    Updated: 2020/02/19 16:57:50 by gmachena         ###   ########.fr        #
+#    Updated: 2020/03/04 10:18:14 by gmachena         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,12 @@ SRC_NAME = matvect_mul.c \
 			vect_dot.c	\
 			vect_cross.c \
 			vect3_rotate.c \
+			mat4_idset.c \
+			mat4_rotate.c \
+			mat4_scaling.c \
+			mat4_trans.c \
+			mat4_perspective.c \
+			ft_radian.c
 
 SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
 OBJ_PATH = ./obj/

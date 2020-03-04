@@ -6,7 +6,7 @@
 /*   By: gmachena <gmachena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 13:59:59 by gmachena          #+#    #+#             */
-/*   Updated: 2020/02/27 14:22:43 by gmachena         ###   ########.fr       */
+/*   Updated: 2020/03/03 17:16:06 by gmachena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int		init_gl(t_env *e, char *name, int win_x, int win_y)
 		ft_putendl("glew init fail\n");
 		return (0);	
 	}
+	glEnable(GL_DEPTH_TEST);
 	framebuffer_size_callback(win_x, win_y);
 	return (1);
 }

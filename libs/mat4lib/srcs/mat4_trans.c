@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vect_long.c                                        :+:      :+:    :+:   */
+/*   mat4_trans.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmachena <gmachena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 16:20:21 by gmachena          #+#    #+#             */
-/*   Updated: 2020/03/04 14:53:24 by gmachena         ###   ########.fr       */
+/*   Created: 2020/03/03 15:22:17 by gmachena          #+#    #+#             */
+/*   Updated: 2020/03/03 15:26:32 by gmachena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mat4lib.h"
+ #include "mat4lib.h"
 
-float vect3_long(t_vect3 v)
+t_mat4 mat4_trans(t_vect3 v)
 {
-    return (sqrtf(v.v[0] * v.v[0] + v.v[1] * v.v[1] + v.v[2] * v.v[2]));
+    t_mat4 new;
+
+    new = mat4_idset();
+    new.m[3] = v.v[X];
+    new.m[7] = v.v[Y];
+    new.m[11] = v.v[Z];
+    new.m[15] = 1;
+    return (new);
 }

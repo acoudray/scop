@@ -9,7 +9,7 @@ LIBS_A = ./libs/libft/libft.a \
 			./libs/glew-2.1.0/lib/libGLEW.a \
 			./libs/libglfw3.a \
 			./libs/gl_lib/gl_lib.a \
-			./libs/mat4lib/mat4lib.a
+			./libs/mat4lib/mat4lib.a \
 
 SDL2_HEADER = -I ./libs/GLFW/ \
 				-I ./libs/glew-2.1.0/include/GL/
@@ -28,7 +28,7 @@ MAT4LIB = libs/mat4lib
 
 LIBINC = -I libs/libft/includes \
 			-I libs/gl_lib/includes \
-			-I libs/mat4lib/includes
+			-I libs/mat4lib/includes \
 
 SRCS = $(addprefix $(DIR_S)/,$(SOURCES))
 OBJS = $(addprefix $(DIR_O)/,$(SOURCES:.c=.o))
