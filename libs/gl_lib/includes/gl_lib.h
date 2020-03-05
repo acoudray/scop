@@ -6,7 +6,7 @@
 /*   By: gmachena <gmachena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 14:06:45 by gmachena          #+#    #+#             */
-/*   Updated: 2020/03/04 15:49:33 by gmachena         ###   ########.fr       */
+/*   Updated: 2020/03/05 16:01:35 by gmachena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,21 @@ typedef struct		s_env
 	unsigned int 	ebo;
 	int				height;
 	int				width;
+	float			deltaTime;
+	float			lastTime;
+
 	t_mat4			view;
 	t_mat4			model;
 	t_mat4			projection;
+
+	t_vect3			camPos;
+	t_vect3			camFront;
+	t_vect3			camUp;
+
 }					t_env;
+
+extern t_vect3	g_front;
+extern float	g_fov;
 
 void			ft_glUniformMat(t_env *e);
 void			gl_loop(t_env *e, int (*fct_main)(t_env*));
@@ -55,5 +66,8 @@ int		 		ft_get_shadersource(t_env *e);
 void			ft_get_vao(t_env *e);
 void			ft_glsetFloat(t_env *e, const char *name, float value);
 void			ft_glsetInt(t_env *e, const char *name, int value);
+int				ft_glinitcam(t_env *e);
+t_mat4			ft_gllookat(t_env *e);
+
 
 #endif

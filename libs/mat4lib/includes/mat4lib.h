@@ -6,7 +6,7 @@
 /*   By: gmachena <gmachena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 18:17:01 by gmachena          #+#    #+#             */
-/*   Updated: 2020/03/04 14:47:52 by gmachena         ###   ########.fr       */
+/*   Updated: 2020/03/05 10:41:19 by gmachena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ t_mat4 mat4_trans(t_vect3 v);
 t_mat4 mat4_perspective(float fov, float aspect, float near, float far);
 float  ft_radf(float degree);
 
+
 t_vect4 vect4_new(float v1, float v2, float v3);
 t_vect3 vect3_new(float v1, float v2, float v3);
 void vect3_set(t_vect3 *v, float set);
@@ -56,7 +57,7 @@ t_vect3	vect3_add(t_vect3 v1, t_vect3 v2);
 //connaitre le vecteur entre 2 points
 t_vect3	vect3_sub(t_vect3 v1, t_vect3 v2);
 //aggrandir vecteur
-t_vect3	vect3_scale(t_vect3 v, double mult);
+t_vect3	vect3_scale(t_vect3 v, float mult);
 t_vect3	vect3_mul(t_vect3 v1, t_vect3 v2);
 t_vect3	vect3_cpy(t_vect3 v);
 //connaitre le vecteur avec une taille de 1
@@ -73,7 +74,7 @@ t_vect3	vect3_rotateinv(t_vect3 v, t_vect3 angle);
 void vect4_set(t_vect4 *v, float set);
 t_vect4	vect4_add(t_vect4 v1, t_vect4 v2);
 t_vect4	vect4_sub(t_vect4 v1, t_vect4 v2);
-t_vect4	vect4_scale(t_vect4 v, double mult);
+t_vect4	vect4_scale(t_vect4 v, float mult);
 t_vect4	vect4_mul(t_vect4 v1, t_vect4 v2);
 t_vect4	vect4_cpy(t_vect4 v);
 t_vect4 vect4_norm(t_vect4 v);

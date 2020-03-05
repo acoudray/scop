@@ -6,7 +6,7 @@
 /*   By: gmachena <gmachena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 16:24:54 by gmachena          #+#    #+#             */
-/*   Updated: 2020/03/04 14:48:20 by gmachena         ###   ########.fr       */
+/*   Updated: 2020/03/05 11:56:33 by gmachena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ t_vect3 vect3_norm(t_vect3 v)
     int i;
 
     i = -1;
-    x = vect3_long(v);
+    if ((x = vect3_long(v)) == 0)
+        return (v);
     while (++i < 3)
         new.v[i] = v.v[i] / x;
     return (new);

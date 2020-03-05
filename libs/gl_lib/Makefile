@@ -7,6 +7,7 @@ SRC_NAME = ft_glinit.c \
 			ft_glarray.c \
 			ft_glshader.c \
 			ft_glsetuniform.c \
+			ft_glcamera.c \
 
 SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
 OBJ_PATH = ./obj/
